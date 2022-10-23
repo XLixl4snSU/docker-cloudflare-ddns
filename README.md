@@ -1,5 +1,3 @@
-[![Travis](https://img.shields.io/travis/oznu/docker-cloudflare-ddns.svg)](https://travis-ci.org/oznu/docker-cloudflare-ddns) [![Docker Pulls](https://img.shields.io/docker/pulls/oznu/cloudflare-ddns.svg)](https://hub.docker.com/r/oznu/cloudflare-ddns/)
-
 # Docker CloudFlare DDNS
 
 This small Alpine Linux based Docker image will allow you to use the free [CloudFlare DNS Service](https://www.cloudflare.com/dns/) as a Dynamic DNS Provider ([DDNS](https://en.wikipedia.org/wiki/Dynamic_DNS)).
@@ -8,11 +6,7 @@ This is a multi-arch image and will run on amd64, aarch64, and armhf devices, in
 
 ## Image Variants
 
-| Image Tag      | Architecture  | OS            | Size   |
-| :------------- | :-------------| :------------ | :----  |
-| latest         | x64           | Alpine Linux  | [![](https://images.microbadger.com/badges/image/oznu/cloudflare-ddns.svg)](https://microbadger.com/images/oznu/cloudflare-ddns) |
-| armhf          | arm32v6       | Alpine Linux  | [![](https://images.microbadger.com/badges/image/oznu/cloudflare-ddns:armhf.svg)](https://microbadger.com/images/oznu/cloudflare-ddns:armhf) |
-| aarch64        | arm64         | Alpine Linux  | [![](https://images.microbadger.com/badges/image/oznu/cloudflare-ddns:aarch64.svg)](https://microbadger.com/images/oznu/cloudflare-ddns:aarch64) |
+This image is available for amd64, arm64 and arm/v7.
 
 ## Usage
 
@@ -23,7 +17,7 @@ docker run \
   -e API_KEY=xxxxxxx \
   -e ZONE=example.com \
   -e SUBDOMAIN=subdomain \
-  oznu/cloudflare-ddns
+  butti/cloudflare-ddns
 ```
 
 ## Parameters
@@ -80,7 +74,7 @@ If you prefer to use [Docker Compose](https://docs.docker.com/compose/):
 version: '2'
 services:
   cloudflare-ddns:
-    image: oznu/cloudflare-ddns:latest
+    image: butti/cloudflare-ddns:latest
     restart: always
     environment:
       - API_KEY=xxxxxxx
@@ -91,7 +85,7 @@ services:
 
 ## License
 
-Copyright (C) 2017-2020 oznu
+Copyright (C) 2022 XLixl4snSU
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
